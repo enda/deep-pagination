@@ -1,0 +1,46 @@
+{
+  "name": "deep-pagination",
+  "version": "1.0.0",
+  "description": "Intelligent pagination generator with multi-level deep pages for SEO-friendly crawling",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "pagination",
+    "seo",
+    "crawler",
+    "deep-pages",
+    "multi-level",
+    "navigation"
+  ],
+  "author": "Jerome Musialak",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enda/deep-pagination.git"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "bugs": {
+    "url": "https://github.com/enda/deep-pagination/issues"
+  },
+  "homepage": "https://github.com/enda/deep-pagination#readme"
+}

@@ -1,0 +1,28 @@
+# Source files
+src/
+__tests__/
+
+# Config files
+tsconfig.json
+jest.config.js
+.gitignore
+
+# Development dependencies
+node_modules/
+coverage/
+
+# Documentation (keep README.md)
+*.md
+!README.md
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
