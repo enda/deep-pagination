@@ -1,6 +1,6 @@
 {
   "name": "deep-pagination",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Intelligent pagination generator with multi-level deep pages for SEO-friendly crawling",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
