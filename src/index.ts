@@ -172,7 +172,7 @@ const validateInput = (current: number, max: number, pad?: number): void => {
 /**
  * Generates pagination array with smart gap handling
  */
-const generatePaginationArray = (
+const deepPaginationArray = (
   current: number,
   max: number,
   pad: number,
@@ -256,7 +256,7 @@ const generatePaginationArray = (
  * Generates smart pagination with multi-level deep pages
  * Optimized for SEO crawlers while maintaining user experience
  */
-export const generatePagination = (options: PaginationOptions): PaginationResult => {
+export const deepPagination = (options: PaginationOptions): PaginationResult => {
   const {
     current,
     max,
@@ -272,7 +272,7 @@ export const generatePagination = (options: PaginationOptions): PaginationResult
     validateJumpValues(jumps);
   }
 
-  const pages = generatePaginationArray(current, max, pad, gapSymbol, jumps);
+  const pages = deepPaginationArray(current, max, pad, gapSymbol, jumps);
 
   return {
     pages,
@@ -283,4 +283,4 @@ export const generatePagination = (options: PaginationOptions): PaginationResult
   };
 };
 
-export default generatePagination;
+export default deepPagination;

@@ -24,9 +24,9 @@ pnpm add deep-pagination
 ## Quick Start
 
 ```typescript
-import { generatePagination } from 'deep-pagination';
+import deepPagination from 'deep-pagination';
 
-const result = generatePagination({
+const result = deepPagination({
   current: 1250,
   max: 50000
 });
@@ -37,7 +37,7 @@ console.log(result.pages);
 
 ## API Reference
 
-### `generatePagination(options: PaginationOptions): PaginationResult`
+### `deepPagination(options: PaginationOptions): PaginationResult`
 
 Generates smart pagination with intelligent gap placement and multi-level navigation.
 
@@ -68,10 +68,10 @@ interface PaginationResult {
 ### Basic Usage
 
 ```typescript
-import { generatePagination } from 'deep-pagination';
+import deepPagination from 'deep-pagination';
 
 // Simple pagination
-const basic = generatePagination({
+const basic = deepPagination({
   current: 5,
   max: 100
 });
@@ -84,7 +84,7 @@ console.log(basic.pages);
 
 ```typescript
 // Handle large datasets with more context
-const largePagination = generatePagination({
+const largePagination = deepPagination({
   current: 15000,
   max: 1000000,
   pad: 3 // Show 3 pages on each side of current
@@ -98,7 +98,7 @@ console.log(largePagination.pages);
 
 ```typescript
 // E-commerce with custom jump pattern
-const customJumps = generatePagination({
+const customJumps = deepPagination({
   current: 250,
   max: 10000,
   jumpValues: [1000, 500, 100, 50, 25, 10, 5, 1]
@@ -113,7 +113,7 @@ console.log(customJumps.pages);
 
 ```typescript
 // Automatically simplifies for small page counts
-const simple = generatePagination({
+const simple = deepPagination({
   current: 3,
   max: 8
 });
@@ -135,7 +135,7 @@ const DEFAULT_JUMP_VALUES = [50000, 25000, 10000, 5000, 1000, 500, 250, 100, 50,
 ### Custom Gap Symbol
 
 ```typescript
-const withCustomGap = generatePagination({
+const withCustomGap = deepPagination({
   current: 50,
   max: 1000,
   gapSymbol: '...'
@@ -147,7 +147,7 @@ const withCustomGap = generatePagination({
 ### E-commerce Product Listings
 ```typescript
 // Handle large product catalogs
-const productPagination = generatePagination({
+const productPagination = deepPagination({
   current: parseInt(searchParams.page) || 1,
   max: Math.ceil(totalProducts / productsPerPage),
   pad: 2
@@ -157,7 +157,7 @@ const productPagination = generatePagination({
 ### Search Results
 ```typescript
 // Search engine result pages
-const searchPagination = generatePagination({
+const searchPagination = deepPagination({
   current: currentPage,
   max: Math.min(maxAllowedPages, totalResults / resultsPerPage),
   jumpValues: [1000, 500, 100, 50, 25, 10, 5, 1]
@@ -167,7 +167,7 @@ const searchPagination = generatePagination({
 ### Blog Archives
 ```typescript
 // Blog post pagination with SEO optimization
-const blogPagination = generatePagination({
+const blogPagination = deepPagination({
   current: page,
   max: Math.ceil(totalPosts / postsPerPage),
   pad: 1, // Minimal padding for cleaner look
@@ -195,12 +195,12 @@ The library includes comprehensive input validation:
 
 ```typescript
 // Throws descriptive errors for invalid inputs
-generatePagination({
+deepPagination({
   current: 0,    // Error: Current page must be a positive integer
   max: -5        // Error: Max pages must be a positive integer
 });
 
-generatePagination({
+deepPagination({
   current: 100,
   max: 50        // Error: Current page cannot be greater than max pages
 });
